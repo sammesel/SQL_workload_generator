@@ -18,8 +18,6 @@ This Sample Code is provided for the purpose of illustration only and is not int
 --
 -- THIS SCRIPT creates the STORED PROCEDURES that are used on script [AdventureWorks_CPU.sql]
 --
---USE AdventureWorksPTO;
---go
 
 /****************
 CREATE THE SCHEMA
