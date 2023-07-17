@@ -1,9 +1,9 @@
 /* 
 	This Sample Code is provided for the purpose of illustration only and is not intended
-	to be used in a production environment.� THIS SAMPLE CODE AND ANY RELATED INFORMATION ARE
+	to be used in a production environment. THIS SAMPLE CODE AND ANY RELATED INFORMATION ARE
 	PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT
 	NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
-	PURPOSE.� We grant You a nonexclusive, royalty-free right to use and modify the Sample Code
+	PURPOSE. We grant You a nonexclusive, royalty-free right to use and modify the Sample Code
 	and to reproduce and distribute the object code form of the Sample Code, provided that You
 	agree: 
 	(i) to not use Our name, logo, or trademarks to market Your software product in which
@@ -18,8 +18,6 @@
 SET NOCOUNT ON
 GO
 
---Use AdventureWorksPTO
---GO
 
 DECLARE @DEBUG	INT = 0
 DECLARE @arg_CustomerID INT = 0
@@ -31,24 +29,24 @@ DECLARE @Arg_TerritoryID INT = 0
 
 DECLARE @tmp_ErrorCount INT = 0
 
-DECLARE @Upper_CustomerID INT;
+DECLARE @Upper_CustomerID INT
 DECLARE @Lower_CustomerID INT
-DECLARE @Upper_PersonID INT;
+DECLARE @Upper_PersonID INT
 DECLARE @Lower_PersonID INT
 DECLARE @Person_LastName nvarchar(100)
-DECLARE @Upper_BirthDateYear INT;
-DECLARE @Lower_BirthDateYear INT;
+DECLARE @Upper_BirthDateYear INT
+DECLARE @Lower_BirthDateYear INT
 
-DECLARE @Upper_TerritoryID INT;
+DECLARE @Upper_TerritoryID INT
 DECLARE @Lower_TerritoryID INT
-DECLARE @Upper_SalesYear INT;
+DECLARE @Upper_SalesYear INT
 DECLARE @Lower_SalesYear INT
 
 
-DECLARE @Upper_ProductID INT;
+DECLARE @Upper_ProductID INT
 DECLARE @Lower_ProductID INT
 
-DECLARE @Rpt_Counter INT = 0;
+DECLARE @Rpt_Counter INT = 0
 
 SELECT 
 	 @Lower_CustomerID = MIN(CustomerID) ---- The lowest random number

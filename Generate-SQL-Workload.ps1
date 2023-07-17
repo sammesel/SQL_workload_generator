@@ -315,7 +315,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -Q"SELECT GETDATE()" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TestConnection" -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\Connection_test.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TestConnection" -T146' 
+
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -332,7 +333,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Compile_Workload.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_CompileWorkload" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Compile_Workload.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_CompileWorkload" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -350,12 +351,12 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_CPU - setup.sql" -n1 -r1 -t' + $timeout + ' -o"databasewatcher_CPU_Stress_setup" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_CPU - setup.sql" -n1 -r1 -t' + $timeout + ' -o"databasewatcher_CPU_Stress_setup" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_CPU.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_CPU_Stress" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_CPU.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_CPU_Stress" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -373,19 +374,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"CPU Busy - Power.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_SQLCPUPower" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\CPU Busy - Power.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_SQLCPUPower" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
 
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"CPU Busy - COSine.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_SQLCPUCosine" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\CPU Busy - COSine.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_SQLCPUCosine" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
 
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"CPU Busy - Numbers Table.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_SQLCPUNumbers" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\CPU Busy - Numbers Table.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_SQLCPUNumbers" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -403,7 +404,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_blockers.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_blockers_only" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_blockers.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_blockers_only" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -422,7 +423,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Sargability.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Sargability" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Sargability.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Sargability" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -441,7 +442,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_ExecutionPlan.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_ExecutionPlan" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_ExecutionPlan.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_ExecutionPlan" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -458,7 +459,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Cursors.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Cursors" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Cursors.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Cursors" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -475,7 +476,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Errors.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Errors" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Errors.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Errors" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -492,7 +493,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"Stress_TempDB.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TempDBResults" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\Stress_TempDB.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TempDBResults" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -509,7 +510,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_CPURunner.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_CPURunner" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_CPURunner.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_CPURunner" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -526,7 +527,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_HeavyQuery.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_HeavyQuery" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_HeavyQuery.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_HeavyQuery" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -543,7 +544,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Dynamic_Workload.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Dynamic_Workload" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Dynamic_Workload.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Dynamic_Workload" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -560,7 +561,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_MemoryGrant.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_MemoryGrant" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_MemoryGrant.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_MemoryGrant" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -577,7 +578,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"STRESS 103 - KEYSET CURSOR for UPDATE Person.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_KeysetCursor" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\STRESS 103 - KEYSET CURSOR for UPDATE Person.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_KeysetCursor" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -594,7 +595,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"STRESS 101 - UPDATE Person Cursor.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_UPDATECursor" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\STRESS 101 - UPDATE Person Cursor.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_UPDATECursor" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -611,7 +612,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"STRESS 102 - READONLY Cursor Person.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_READONLYCursor" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\STRESS 102 - READONLY Cursor Person.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_READONLYCursor" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -628,7 +629,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_EnlargeSalesTables.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_InsertEnlargedSales" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_EnlargeSalesTables.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_InsertEnlargedSales" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -645,42 +646,42 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_CPU - setup.sql" -n1 -r1 -t' + $timeout + ' -o"databasewatcher_CPU_SETUP" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_CPU - setup.sql" -n1 -r1 -t' + $timeout + ' -o"databasewatcher_CPU_SETUP" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_ParamSniffing - setup.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_ParamSniffing_SETUP" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_ParamSniffing - setup.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_ParamSniffing_SETUP" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_ParamSniffing.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_ParamSniffing" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_ParamSniffing.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_ParamSniffing" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_CPU.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_CPU" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_CPU.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_CPU" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Hash.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Hash" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Hash.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Hash" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_PARAMETERIZATION.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_PARAMETERIZATION" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_PARAMETERIZATION.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_PARAMETERIZATION" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Recompile.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Recompile" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Recompile.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_Recompile" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_HighCPU.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_HighCPU" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_HighCPU.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_HighCPU" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -700,22 +701,22 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"tempstress_ddl.sql" -n1 -r1 -t' + $timeout + ' -o"databasewatcher_TempDB_Objects" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\tempstress_ddl.sql" -n1 -r1 -t' + $timeout + ' -o"databasewatcher_TempDB_Objects" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"gen_tempstress_small.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TempDB_Objects_small" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\gen_tempstress_small.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TempDB_Objects_small" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"gen_tempstress_medsize.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TempDB_Objects_medsize" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\gen_tempstress_medsize.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TempDB_Objects_medsize" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"gen_tempstress_large.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TempDB_Objects_large" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\gen_tempstress_large.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_TempDB_Objects_large" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -735,22 +736,22 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"WriteLog_ddl.sql"       -n1 -r1 -t' + $timeout + ' -o"databasewatcher_WriteLog_Objects" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\WriteLog_ddl.sql"       -n1 -r1 -t' + $timeout + ' -o"databasewatcher_WriteLog_Objects" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"gen_WriteLog_small.sql"   -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_WriteLog_Objects_small" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\gen_WriteLog_small.sql"   -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_WriteLog_Objects_small" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"gen_WriteLog_medsize.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_WriteLog_Objects_medsize" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\gen_WriteLog_medsize.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_WriteLog_Objects_medsize" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"gen_WriteLog_large.sql"   -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_WriteLog_Objects_large" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\gen_WriteLog_large.sql"   -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_WriteLog_Objects_large" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -771,17 +772,17 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 #   "Path doesn't exist: $path"
                 }
             }
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Deadlock_Setup.sql"     -n1 -r1 -t' + $timeout + ' -o"databasewatcher_deadlock_setup" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Deadlock_Setup.sql"     -n1 -r1 -t' + $timeout + ' -o"databasewatcher_deadlock_setup" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Deadlock_Session_1.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_deadlock_session_1" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Deadlock_Session_1.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_deadlock_session_1" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_Deadlock_Session_2.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_deadlock_session_2" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_Deadlock_Session_2.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_deadlock_session_2" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
@@ -801,26 +802,26 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
                 }
             }
             # lock-escalation-setup:
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_LockEscalation_Setup.sql"     -n1 -r1 -t' + $timeout + ' -o"databasewatcher_attentions_LockEscalation_setup" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_LockEscalation_Setup.sql"     -n1 -r1 -t' + $timeout + ' -o"databasewatcher_attentions_LockEscalation_setup" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
             # lock-escalation-workload
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_LockEscalation_Workload.sql"  -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_attentions_LockEscalation" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_LockEscalation_Workload.sql"  -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_attentions_LockEscalation" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
 
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_attentions_JoinPredicate.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_attentions_JoinPredicate" -q -T146'
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_attentions_JoinPredicate.sql" -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_attentions_JoinPredicate" -q -T146'
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
             Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $args
 
             # sort warning
-            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"AdventureWorks_attentions_SortWarning.sql"   -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_attentions_SortWarnings" -q -T146' 
+            $args = '-S"' + $srv + '" -U"' +$user + '" -P"' + $pass + '" -d"' + $database + '" -i"TSQL\AdventureWorks_attentions_SortWarning.sql"   -n' + $sessions + ' -r' + $repeats + ' -t' + $timeout + ' -o"databasewatcher_attentions_SortWarnings" -q -T146' 
             if ($chkbox_showdebug.checked) {
                 write-host $args.replace($pass,'<password>')
             }
