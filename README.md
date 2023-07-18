@@ -75,18 +75,26 @@ We left the 2 checkboxes checked, which will allow us the see execution details 
 
 * this image shows the output on PowerShell Console
 
-![Alt text](IMG/OSTRESS_EXEC_IMG02.jpg)
-    *the 1st highlighted section shows the ServerName, the Username, and the placeholder for password
-    *the 2nd highlighted section shows the parameters used for sessions/repetitions/timeout
+![PowerShell console output](IMG/OSTRESS_EXEC_02.jpg)
+
+* the 1st highlighted section shows the ServerName, the Username, and password placeholder
+
+* the 2nd highlighted section shows the parameters used for sessions/repetitions/timeout
+
 
 * this image shows the OSTRESS output
 
-![Alt text](IMG/OSTRESS_EXEC_IMG01.jpg)
+![OSTRESS.EXE output](IMG/OSTRESS_EXEC_01.jpg)
 
 * this image shows the folder containing OSTRESS output
 
-![Alt text](IMG/OSTRESS_EXEC_IMG03.jpg)
+![folder containing OSTRESS log and output](IMG/OSTRESS_EXEC_03.jpg)
 
 * this image shows the OSTRESS.log file
 
-![Alt text](IMG/OSTRESS_EXEC_IMG03.jpg)
+![OSTRESS log](IMG/OSTRESS_EXEC_04.jpg)
+
+* this image shows the output received by one of sessions
+
+![session execution output](IMG/OSTRESS_EXEC_05.jpg)
+
