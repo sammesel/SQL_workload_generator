@@ -3,9 +3,10 @@
 
 ## Database
 
-it is required the server to have a copy of the AdventureWorksOLTP database 
+it is required the server to have a copy of the AdventureWorksOLTP database
+
 *AdventureWorks OLTP sample databases can be found at: https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms
-*these scripts have been sucessfully tested with databases created from AdventureWorks2022.bak |  AdventureWorks2019.bak |  AdventureWorks2017.bak |  AdventureWorks2016.bak
+*the scripts provided have been sucessfully tested with databases created from AdventureWorks2022.bak |  AdventureWorks2019.bak |  AdventureWorks2017.bak |  AdventureWorks2016.bak
 
 ### Enlarged Database
 
