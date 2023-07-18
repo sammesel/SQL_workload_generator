@@ -4,20 +4,21 @@ add-Type -AssemblyName System.Windows.Forms
 
 $form = New-Object System.Windows.Forms.Form
 $form.Text = 'Generate SQL Workload'
-$form.Size = New-Object System.Drawing.Size(1300,1300)
+$form.Size = New-Object System.Drawing.Size(1050,1150)
 $form.StartPosition = 'CenterScreen'
 
 $labelInstance = New-Object System.Windows.Forms.Label
 $labelInstance.top = 60
 $labelInstance.left = 30
-$labelInstance.width = 420
+$labelInstance.width = 300
 $labelInstance.height = 60
 $labelInstance.Text = '       Server:'
+$labelInstance.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($labelInstance) 
 
 $textBoxInstance = New-Object System.Windows.Forms.TextBox
 $textBoxInstance.top=60
-$textBoxInstance.left= 450
+$textBoxInstance.left= 350
 $textBoxInstance.width = 600
 $textBoxInstance.height = 60
 $textBoxInstance.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
@@ -27,14 +28,15 @@ $form.Controls.Add($textBoxInstance)
 $labelDatabase = New-Object System.Windows.Forms.Label
 $labelDatabase.top = 120
 $labelDatabase.left = 30
-$labelDatabase.width = 420
+$labelDatabase.width = 300
 $labelDatabase.height = 60
 $labelDatabase.Text = 'Database Name:'
+$labelDatabase.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($labelDatabase)
 
 $textBoxDatabase = New-Object System.Windows.Forms.TextBox
 $textBoxDatabase.top=120
-$textBoxDatabase.left= 450
+$textBoxDatabase.left= 350
 $textBoxDatabase.width = 600
 $textBoxDatabase.height = 60
 $textBoxDatabase.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
@@ -43,14 +45,15 @@ $form.Controls.Add($textBoxDatabase)
 $labelUsername = New-Object System.Windows.Forms.Label
 $labelUsername.top = 180
 $labelUsername.left = 30
-$labelUsername.width = 420
+$labelUsername.width = 300
 $labelUsername.height = 60
 $labelUsername.Text = '     Username:'
+$labelUsername.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($labelUsername)
 
 $textBoxUsername = New-Object System.Windows.Forms.TextBox
 $textBoxUsername.top= 180
-$textBoxUsername.left= 450
+$textBoxUsername.left= 350
 $textBoxUsername.width = 600
 $textBoxUsername.height = 60
 $textBoxUsername.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
@@ -60,15 +63,16 @@ $form.Controls.Add($textBoxUsername)
 $labelPassword = New-Object System.Windows.Forms.Label
 $labelPassword.top = 240
 $labelPassword.left = 30
-$labelPassword.width = 420
+$labelPassword.width = 300
 $labelPassword.height = 60
 $labelPassword.Text = '     Password:'
+$labelPassword.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($labelPassword)
 
 $textboxpassword = New-Object Windows.Forms.MaskedTextBox
 $textboxpassword.PasswordChar = '*'
 $textboxpassword.Top  = 240
-$textboxpassword.Left = 450
+$textboxpassword.Left = 350
 $textboxpassword.Width  = 600
 $textboxpassword.Height = 900
 $textboxpassword.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
@@ -78,15 +82,16 @@ $form.Controls.Add($textboxpassword)
 $labelWorkload = New-Object System.Windows.Forms.Label
 $labelWorkload.top = 300
 $labelWorkload.left = 30
-$labelWorkload.width = 420
+$labelWorkload.width = 300
 $labelWorkload.height = 60
 $labelWorkload.Text = '     Workload:'
+$labelWorkload.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($labelWorkload)
 
 
 $listBox = New-Object System.Windows.Forms.ListBox
 $listBox.top= 300
-$listBox.left= 450
+$listBox.left= 350
 $listBox.width = 600
 $listBox.Height = 360
 [void] $listBox.Items.Add('0 Connection Test')
@@ -118,14 +123,15 @@ $form.Controls.Add($listBox)
 $labelSessions = New-Object System.Windows.Forms.Label
 $labelSessions.top = 660
 $labelSessions.left = 30
-$labelSessions.width = 420
+$labelSessions.width = 300
 $labelSessions.height = 60
 $labelSessions.Text = '# of Sessions:'
+$labelSessions.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($labelSessions)
 
 $textboxSessions = New-Object Windows.Forms.MaskedTextBox
 $textboxSessions.Top  = 660
-$textboxSessions.Left = 450
+$textboxSessions.Left = 350
 $textboxSessions.Width  = 60
 $textboxSessions.Height = 900
 $textboxSessions.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
@@ -134,14 +140,15 @@ $form.Controls.Add($textboxSessions)
 $labelrepetitions = New-Object System.Windows.Forms.Label
 $labelrepetitions.top = 720
 $labelrepetitions.left = 30
-$labelrepetitions.width = 420
+$labelrepetitions.width = 300
 $labelrepetitions.height = 60
 $labelrepetitions.Text = '# repetitions:'
+$labelrepetitions.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($labelrepetitions)
 
 $textboxRepetitions = New-Object Windows.Forms.MaskedTextBox
 $textboxRepetitions.Top  = 720
-$textboxRepetitions.Left = 450
+$textboxRepetitions.Left = 350
 $textboxRepetitions.Width  = 60
 $textboxRepetitions.Height = 900
 $textboxRepetitions.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
@@ -150,15 +157,16 @@ $form.Controls.Add($textboxRepetitions)
 $labelTimeout = New-Object System.Windows.Forms.Label
 $labelTimeout.top = 780
 $labelTimeout.left = 30
-$labelTimeout.width = 420
+$labelTimeout.width = 300
 $labelTimeout.height = 60
 $labelTimeout.Text = '  Timeout (s):'
+$labelTimeout.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($labelTimeout)
 
 
 $textboxTimeout = New-Object Windows.Forms.MaskedTextBox
 $textboxTimeout.Top  = 780
-$textboxTimeout.Left = 450
+$textboxTimeout.Left = 350
 $textboxTimeout.Width  = 60
 $textboxTimeout.Height = 900
 $textboxTimeout.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
@@ -168,11 +176,12 @@ $form.Controls.Add($textboxTimeout)
 $chkbox_showdebug = New-Object System.Windows.Forms.CheckBox
 $chkbox_showdebug.text = "debug start-process"
 $chkbox_showdebug.Top  = 840
-$chkbox_showdebug.Left = 450
+$chkbox_showdebug.Left = 350
 $chkbox_showdebug.Width  = 600
 $chkbox_showdebug.Height = 60
 $chkbox_showdebug.Font = New-Object System.Drawing.Font("Lucida Console",20,[System.Drawing.FontStyle]::Regular)
 $chkbox_showdebug.checked = -1
+$chkbox_showdebug.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($chkbox_showdebug)
 
 
@@ -189,33 +198,36 @@ $form.Controls.Add($chkbox_showdebug)
 $chkbox_showOstress = New-Object System.Windows.Forms.CheckBox
 $chkbox_showOstress.text = "Show OSTRESS"
 $chkbox_showOstress.Top  = 900
-$chkbox_showOstress.Left = 450
+$chkbox_showOstress.Left = 350
 $chkbox_showOstress.Width  = 600
 $chkbox_showOstress.Height = 60
 $chkbox_showOstress.Font = New-Object System.Drawing.Font("Lucida Console",20,[System.Drawing.FontStyle]::Regular)
 $chkbox_showOstress.checked = -1
+$chkbox_showOstress.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($chkbox_showOstress)
 
 $form.Font = New-Object System.Drawing.Font("Lucida Console",12,[System.Drawing.FontStyle]::Regular)
 
 
 $okButton = New-Object System.Windows.Forms.Button
-$okButton.Top= 1080
+$okButton.Top= 990
 $okButton.Left= 150
 $okButton.Width= 210
 $okButton.Height= 60
 $okButton.Text = 'OK'
 $okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$okButton.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.AcceptButton = $okButton
 $form.Controls.Add($okButton)
 
 $cancelButton = New-Object System.Windows.Forms.Button
-$cancelButton.Top= 1080
+$cancelButton.Top= 990
 $cancelButton.Left= 450
 $cancelButton.Width= 210
 $cancelButton.Height= 60
 $cancelButton.Text = 'Cancel'
 $cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$cancelButton.Font = New-Object System.Drawing.Font("Lucida Console",24,[System.Drawing.FontStyle]::Regular)
 $form.CancelButton = $cancelButton
 $form.Controls.Add($cancelButton)
 
@@ -242,6 +254,15 @@ $form.Topmost = $true
 
 $form.Add_Shown({$textBoxInstance.Select()})
 $result = $form.ShowDialog()
+
+[string]$srv
+[string]$database
+[string]$user
+[string]$Pass
+[string]$sessions
+[string]$repeats
+[string]$timeout
+[string]$args
 
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
@@ -300,6 +321,9 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
     #}
 
 
+    if ($listBox.SelectedIndex -eq -1) {
+        $listBox.SelectedIndex = 0
+    }
     $Ostress = $listBox.SelectedItem
     $selection = $ostress.Substring(0,1) 
 
