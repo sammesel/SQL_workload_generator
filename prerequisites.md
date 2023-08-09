@@ -11,9 +11,9 @@ it is required the server to have a copy of the AdventureWorksOLTP database
 
 **notice:**
 
-* you can restore the database using any valid name
+* the restored database can use any valid name
 
-* these scripts are not compatible with the Azure SQL Database sample
+* these scripts are not compatible with the Azure SQL Database sample, as that sample database has another set of objects and schemas
 
 ### Enlarged Database
 
