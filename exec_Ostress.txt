@@ -1,7 +1,6 @@
 .\inst_2022_A
 AdventureWorks_StressTest
 sa
-
 10
-
-
+1
+10
