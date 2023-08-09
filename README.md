@@ -71,7 +71,14 @@ For this simmulation, we will validate the tool can connect to that instance, th
 
 ![Alt text](IMG/GUI_img02.jpg)
 
-We left the 2 checkboxes checked, which will allow us the see execution details in the next images
+3 checkboxes are checked, which will allow us the see execution details in the next images
+
+The checkbox not checked (Show the OSTRESS window - quiet mode) when checked:
+
+* avoids screen refresh on client machine 
+
+* does not save the output from OSTRESS, which will decrease impact on client machine storage and network
+
 
 * this image shows the output on PowerShell Console
 

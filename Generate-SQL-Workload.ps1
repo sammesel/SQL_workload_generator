@@ -234,7 +234,7 @@ $chkbox_showOstressQuietMode.Left = 480
 $chkbox_showOstressQuietMode.Width  = 600
 $chkbox_showOstressQuietMode.Height = 60
 $chkbox_showOstressQuietMode.Font = New-Object System.Drawing.Font("Lucida Console",20,[System.Drawing.FontStyle]::Regular)
-$chkbox_showOstressQuietMode.checked = -1
+$chkbox_showOstressQuietMode.checked = 0
 $chkbox_showOstressQuietMode.Font = New-Object System.Drawing.Font("Lucida Console",18,[System.Drawing.FontStyle]::Regular)
 $form.Controls.Add($chkbox_showOstressQuietMode)
 
@@ -712,12 +712,18 @@ while ($true) {
 
         'H' {
                 # remove previous execution:
-                $paths = 'OstressOutput_InsertEnlargedSales'
+                $paths = 'OstressOutput_InsertEnlargedSales' , 'OstressOutput_InsertEnlargedSales_SETUP'
                 foreach ($path in $paths) {
                     if (Test-Path -LiteralPath $path) {
                         Remove-Item -LiteralPath $path  -Recurse # -Verbose 
                     }
                 }
+                # setup
+                $arguments = Get-Argument($srv, $user, $pass , $WindowsRadioButton.Checked , $database , "TSQL\AdventureWorks_EnlargeSalesTables_Setup.sql" , 1 , 1 , $timeout , $chkbox_saveOstressOutput.checked, "OstressOutput_InsertEnlargedSales_SETUP", $chkbox_showOstressQuietMode.checked )
+                if ($chkbox_showStartProcess.checked) {
+                    write-host $arguments.replace($pass,'<password>')
+                }
+                Start-Process -FilePath "OSTRESS.EXE" -WindowStyle $OSTRESSWindowStyle -ArgumentList $arguments
                 # workload 
                 $arguments = Get-Argument($srv, $user, $pass , $WindowsRadioButton.Checked , $database , "TSQL\AdventureWorks_EnlargeSalesTables.sql" , $sessions , $repeats , $timeout , $chkbox_saveOstressOutput.checked, "OstressOutput_InsertEnlargedSales", $chkbox_showOstressQuietMode.checked )
                 if ($chkbox_showStartProcess.checked) {
