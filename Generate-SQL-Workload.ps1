@@ -1,5 +1,5 @@
 ﻿## cd \
-## cd 'C:\Temp\simmulated workload\AdventureWorksLT-Workload'
+## cd 'C:\sql workload_generator'
 add-Type -AssemblyName System.Windows.Forms
 
 $form = New-Object System.Windows.Forms.Form
