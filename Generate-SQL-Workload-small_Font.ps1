@@ -1,6 +1,6 @@
 ﻿## https://github.com/sammesel/SQL_workload_generator
 cd \
-cd 'C:\Temp\simmulated_workload'
+cd 'C:\sql_workload_generator'
 add-Type -AssemblyName System.Windows.Forms
 
 $form = New-Object System.Windows.Forms.Form
